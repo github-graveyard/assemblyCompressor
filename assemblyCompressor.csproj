@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{52DBA39F-D1DC-475C-8BFD-8EFC047F62A8}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>assemblyCompressor</RootNamespace>
+    <AssemblyName>assemblyCompressor</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <StartupObject>assemblyCompressor.Program</StartupObject>
+    <ApplicationIcon>Resources\ac.ico</ApplicationIcon>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>assemblyCompressor.snk</AssemblyOriginatorKeyFile>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="IconLib, Version=0.73.0.0, Culture=neutral, PublicKeyToken=75d0cf0395beb187, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="updateSystemDotNet.Controller, Version=1.6.0.403, Culture=neutral, PublicKeyToken=4b29b2d1691903dc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Resources\References\updateSystemDotNet.Controller.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\assemblyCollection.cs" />
+    <Compile Include="Core\assemblyInformation.cs" />
+    <Compile Include="Core\assemblyParser.cs" />
+    <Compile Include="Core\commandLineUtility.cs" />
+    <Compile Include="Core\Compiler.cs" />
+    <Compile Include="Core\compilerException.cs" />
+    <Compile Include="Core\compilerProgressChangedEventArgs.cs" />
+    <Compile Include="Core\missingArgumentException.cs" />
+    <Compile Include="Core\Project.cs" />
+    <Compile Include="Core\subSystem\appLauncher.cs" />
+    <Compile Include="Core\subSystem\dateExpiredDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Core\subSystem\exceptionDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Core\subSystem\languageHelper.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Core\subSystem\exceptionDialog.resx">
+      <DependentUpon>exceptionDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\ucAbout.resx">
+      <DependentUpon>ucAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Controls\ucSettings.resx">
+      <DependentUpon>ucSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Forms\assemblyInfoDialog.resx">
+      <DependentUpon>assemblyInfoDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Forms\buildDialog.resx">
+      <DependentUpon>buildDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Forms\mainForm.resx">
+      <DependentUpon>mainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="UI\Controls\contentPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\linkLabelEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\listViewEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\nativeRenderer.cs" />
+    <Compile Include="UI\Controls\treeViewEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\ucAbout.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\ucAbout.Designer.cs">
+      <DependentUpon>ucAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\ucSettings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Controls\ucSettings.Designer.cs">
+      <DependentUpon>ucSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Forms\assemblyInfoDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Forms\assemblyInfoDialog.Designer.cs">
+      <DependentUpon>assemblyInfoDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Forms\buildDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Forms\buildDialog.Designer.cs">
+      <DependentUpon>buildDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Forms\mainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Forms\mainForm.Designer.cs">
+      <DependentUpon>mainForm.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ac.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assemblyCompressor.snk" />
+    <None Include="Resources\assemblyCompressor.udproj" />
+    <None Include="Resources\Graphics\assembly.png" />
+    <None Include="Resources\Graphics\pbkt.png" />
+    <None Include="Resources\Graphics\dependency.png" />
+    <None Include="Resources\Graphics\version.png" />
+    <None Include="Resources\Graphics\info.png" />
+    <None Include="Resources\Graphics\updates.png" />
+    <None Include="Resources\Graphics\build.png" />
+    <None Include="Resources\Graphics\folder_16px.png" />
+    <Content Include="Resources\assemblyCompressor.xml" />
+    <None Include="Resources\Graphics\save.png" />
+    <None Include="Resources\Graphics\open.png" />
+    <None Include="Resources\Graphics\exclamation.png" />
+    <None Include="Resources\Graphics\creative-commons.png" />
+    <None Include="Resources\Graphics\add_assembly.png" />
+    <None Include="Resources\Graphics\remove_assembly.png" />
+    <None Include="Resources\Graphics\Save_Large.png" />
+    <None Include="Resources\Graphics\SaveAs_Large.png" />
+    <None Include="Resources\Graphics\Open_Large.png" />
+    <None Include="Resources\Graphics\checkForUpdates.png" />
+    <None Include="Resources\Graphics\about.png" />
+    <None Include="Resources\Graphics\searchReferences.png" />
+    <None Include="Resources\Graphics\buildAssembly.png" />
+    <None Include="Resources\Graphics\anyCpu.png" />
+    <None Include="Resources\Graphics\x64.png" />
+    <None Include="Resources\Graphics\x86.png" />
+    <None Include="Resources\Graphics\app.png" />
+    <None Include="Resources\Graphics\cmd.png" />
+    <Content Include="Resources\References\IconLib.dll" />
+    <None Include="Resources\usys.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="codeCompiler\codeCompiler.csproj">
+      <Project>{3079EF63-AF42-4F5F-A403-77E893F0C414}</Project>
+      <Name>codeCompiler</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <UsingTask TaskName="SmartAssembly.MSBuild.Tasks.Build" AssemblyName="SmartAssembly.MSBuild.Tasks,&#xD;&#xA;Version=3.0.0.0, Culture=neutral, PublicKeyToken=cd3409ee69028647" />
+  <Target Name="BeforeBuild" Condition=" '$(Configuration)' == 'Release' ">
+    <CreateProperty Value="true">
+      <Output TaskParameter="Value" PropertyName="RunSmartAssembly" />
+    </CreateProperty>
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <!--<Target Name="AfterBuild">
+    <Exec Command="signtool.exe sign /f $(codesigncertificate) /p $(certificatepassword) /t $(url_to_timestamp_server) @(files_to_sign, ' ')"/>
+  </Target>-->
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties BuildVersion_BuildVersioningStyle="None.None.YearStamp.MonthAndDayStamp" BuildVersion_UpdateFileVersion="True" BuildVersion_UpdateAssemblyVersion="True" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

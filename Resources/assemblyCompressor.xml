@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <mainAssembly>
+    <Path>S:\Git\assemblyCompressor\bin\Release\assemblyCompressor.exe</Path>
+    <Id>c7e9ca0a-4665-4293-9595-0471b701a163</Id>
+  </mainAssembly>
+  <assemblyInfo>
+    <assemblyTitle>assemblyCompressor</assemblyTitle>
+    <assemblyDescription>Anwendung zum komprimieren von .Net Assemblies</assemblyDescription>
+    <assemblyCompany>Maximilian Krauss</assemblyCompany>
+    <assemblyProduct>assemblyCompressor</assemblyProduct>
+    <assemblyCopyright>Copyright (c) Maximilian Krauss</assemblyCopyright>
+    <assemblyTrademark />
+    <Version>1.0.0.0</Version>
+  </assemblyInfo>
+  <referenceAssemblies>
+    <assemblyInformation>
+      <Path>S:\Git\assemblyCompressor\Resources\References\updateSystemDotNet.Controller.dll</Path>
+      <Id>57c116b5-406d-4cb5-8320-aceb8fd05321</Id>
+    </assemblyInformation>
+    <assemblyInformation>
+      <Path>S:\Git\assemblyCompressor\bin\Release\codeCompiler.dll</Path>
+      <Id>d5eddda7-0642-4590-9ea6-f7fd167c6870</Id>
+    </assemblyInformation>
+    <assemblyInformation>
+      <Path>S:\Git\assemblyCompressor\Resources\References\IconLib.dll</Path>
+      <Id>9d5e560a-6936-4515-a310-c9bdb5314693</Id>
+    </assemblyInformation>
+  </referenceAssemblies>
+  <compressFiles>true</compressFiles>
+  <signAssembly>true</signAssembly>
+  <snkPath>S:\Git\assemblyCompressor\assemblyCompressor.snk</snkPath>
+  <outputPath>S:\Git\assemblyCompressor\assemblyCompressor.exe</outputPath>
+  <retrieveAssemblyInformation>true</retrieveAssemblyInformation>
+  <useMainAssemblyIcon>true</useMainAssemblyIcon>
+  <isConsoleApplication>false</isConsoleApplication>
+  <enableRuntimeLimitation>false</enableRuntimeLimitation>
+  <restrictByDate>false</restrictByDate>
+  <runtimeLimitationDate>0001-01-01T00:00:00</runtimeLimitationDate>
+  <target>anycpu</target>
+</Project>

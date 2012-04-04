@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "assemblyCompressor", "assemblyCompressor.csproj", "{52DBA39F-D1DC-475C-8BFD-8EFC047F62A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "codeCompiler", "codeCompiler\codeCompiler.csproj", "{3079EF63-AF42-4F5F-A403-77E893F0C414}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{52DBA39F-D1DC-475C-8BFD-8EFC047F62A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52DBA39F-D1DC-475C-8BFD-8EFC047F62A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52DBA39F-D1DC-475C-8BFD-8EFC047F62A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52DBA39F-D1DC-475C-8BFD-8EFC047F62A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3079EF63-AF42-4F5F-A403-77E893F0C414}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3079EF63-AF42-4F5F-A403-77E893F0C414}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3079EF63-AF42-4F5F-A403-77E893F0C414}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3079EF63-AF42-4F5F-A403-77E893F0C414}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		VisualSVNWorkingCopyRoot = .
+	EndGlobalSection
+EndGlobal
